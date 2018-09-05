@@ -9,14 +9,14 @@ import (
 )
 
 func main() {
-	lambda := flag.Bool("lambda", false, "run as lambda")
+	server := flag.Bool("server", false, "run as server")
 	hello.RegisterRoutes()
-	if *lambda {
-		if err := gateway.ListenAndServe(":3000", nil); err != nil {
+	if *server {
+		if err := http.ListenAndServe(":3000", nil); err != nil {
 			panic(err)
 		}
 	} else {
-		if err := http.ListenAndServe(":3000", nil); err != nil {
+		if err := gateway.ListenAndServe(":3000", nil); err != nil {
 			panic(err)
 		}
 	}
