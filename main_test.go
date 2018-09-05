@@ -8,7 +8,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	main "github.com/cpliakas/aws-sam-golang-example"
+	main "golang-serverless-and-server/hello"
 )
 
 // tests implements the testing table pattern.
